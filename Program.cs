@@ -19,27 +19,38 @@
 // }
 
 
-//Задача 3 Напишите программу, которая будет выдавать название дня недели по заданному номеру.
-Console.WriteLine("Введите номер дня недели");
-int number = int.Parse(Console.ReadLine());
-Console.Write("Этот день недели: ");
-if (number == 1)
-    Console.WriteLine("Понедельник");
-else 
-if (number == 2)
-    Console.WriteLine("Вторник");
-else 
-if (number == 3)
-    Console.WriteLine("Среда");
-else 
-if (number == 4)
-    Console.WriteLine("Четверг");
-else 
-if (number == 5)
-    Console.WriteLine("Пятница");
-else 
-if (number == 6)
-    Console.WriteLine("Суббота");
-else 
-if (number == 7)
-    Console.WriteLine("Воскресенье");
+// //Задача 3 Напишите программу, которая будет выдавать название дня недели по заданному номеру.
+// Console.WriteLine("Введите номер дня недели");
+// int number = int.Parse(Console.ReadLine());
+// Console.Write("Этот день недели: ");
+// if (number == 1)
+//     Console.WriteLine("Понедельник");
+// else 
+// if (number == 2)
+//     Console.WriteLine("Вторник");
+// else 
+// if (number == 3)
+//     Console.WriteLine("Среда");
+// else 
+// if (number == 4)
+//     Console.WriteLine("Четверг");
+// else 
+// if (number == 5)
+//     Console.WriteLine("Пятница");
+// else 
+// if (number == 6)
+//     Console.WriteLine("Суббота");
+// else 
+// if (number == 7)
+//     Console.WriteLine("Воскресенье");
+// else
+// Console.WriteLine("Такого дня недели нет");
+
+//Задача 4 Напишите программу, которая на вход принимает одно число (N), а на выходе показывает все целые числа в промежутке от -N до N
+int N = int.Parse(Console.ReadLine());
+int M = -N;
+while (M!=N+1)
+{
+    Console.WriteLine(M);
+    M++;
+}
