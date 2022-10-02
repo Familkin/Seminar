@@ -20,7 +20,9 @@
 
 
 //Задача 3 Напишите программу, которая будет выдавать название дня недели по заданному номеру.
+Console.WriteLine("Введите номер дня недели");
 int number = int.Parse(Console.ReadLine());
+Console.Write("Этот день недели: ");
 if (number == 1)
     Console.WriteLine("Понедельник");
 else 
