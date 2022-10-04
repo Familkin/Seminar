@@ -88,6 +88,7 @@ while (index < array.Length) //Обозначаю цикл
 {
     array[index] = new Random().Next(1,10); 
     Console.Write($"{array[index]},"); 
+    Thread.Sleep(10);
     index++;
 } 
 
