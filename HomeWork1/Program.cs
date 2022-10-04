@@ -51,19 +51,20 @@
 //     Console.WriteLine($"Число {number1} нечетное.");
 // }
 
-
+//------------------------------------------------------------------------------
 // Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 // 5 -> 2, 4
 // 8 -> 2, 4, 6, 8
-Console.WriteLine("Введите число: ");
-int N = int.Parse(Console.ReadLine());
-int M = 2;
-Console.WriteLine($"Все чётные числа от 1 до {N}: ");
-while (M <= N)
-{
-    Console.WriteLine(M);
-    M = M + 2;
-}
+//Решение:
+// Console.WriteLine("Введите число: ");
+// int N = int.Parse(Console.ReadLine());
+// int M = 2;
+// Console.WriteLine($"Все чётные числа от 1 до {N}: ");
+// while (M <= N)
+// {
+//     Console.WriteLine(M);
+//     M = M + 2;
+// }
 
 
 
@@ -75,3 +76,22 @@ while (M <= N)
 // Какая сумма элементов массива больше – с первого до элемента с номером К или от элемента с номером К+1 до последнего.
 // На вход подается массив чисел. Затем вводится переменная K. На выход программа должна вывести или "Первая часть" или "Вторая часть"
 // Например, при вводе массива [8 11 15 8 9 10] и числа 3. Программа должна вывести 1 часть, так как 42 больше, чем 19.
+//Решение
+
+int[] array = new int[10];
+int index = 0;
+while (index < array.Length)
+{
+    array[index] = new Random().Next(1,10);
+    index++;
+    Console.WriteLine(array[index]);
+}
+
+
+
+// int[] array = new int[10];
+// for (int i = 0; i < array.Length; i++)
+// {
+//     array[i] = new Random().Next(1, 10);
+//     Console.Write(array[i]);
+// }
