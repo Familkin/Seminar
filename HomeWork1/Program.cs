@@ -78,14 +78,54 @@
 // Например, при вводе массива [8 11 15 8 9 10] и числа 3. Программа должна вывести 1 часть, так как 42 больше, чем 19.
 //Решение
 
-int[] array = new int[10];
-int index = 0;
-while (index < array.Length)
+Console.Write("Рандомные элементы в массиве: ");
+int[] array = new int[10]; //Обозначаю массив
+int index = 0; // ввожу переменную для цикла
+while (index < array.Length) //Обозначаю цикл
 {
-    array[index] = new Random().Next(1,10);
+    array[index] = new Random().Next(1,10); 
+    Console.Write(array[index]); 
     index++;
-    Console.WriteLine(array[index]);
+} 
+
+Console.WriteLine();
+Console.WriteLine("Введите порядковый номер элемента в массиве: ");
+int K = int.Parse(Console.ReadLine());
+
+//Посчитаем сумму элементов до К и выведем их
+int sum1=0;
+int i1 = 0;
+while (i1<K)
+{
+    sum1 = array[i1] + sum1;
+    i1++;
 }
+Console.WriteLine($"Сумма элементов до K = {sum1}");
+
+//Посчитаем сумму элементов после К и выведем их
+int sum2=0;
+int i2 = K;
+while (i2<array.Length)
+{
+    sum2 = array[i2] + sum2;
+    i2++;
+}
+Console.WriteLine($"Сумма элементов после K = {sum2}");
+
+//Сравним значения до к и после
+if (sum1>sum2)
+{
+    Console.WriteLine($"Сумма значений ДО {K} элемента в массиве больше суммы значений после");
+}
+else 
+    Console.WriteLine($"Сумма значений ПОСЛЕ {K} элемента в массиве больше суммы значений после");
+
+
+
+
+
+
+
 
 
 
