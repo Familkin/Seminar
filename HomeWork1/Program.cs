@@ -78,13 +78,16 @@
 // Например, при вводе массива [8 11 15 8 9 10] и числа 3. Программа должна вывести 1 часть, так как 42 больше, чем 19.
 //Решение
 
+Console.Write("Введите размер массива: ");
+int N = int.Parse(Console.ReadLine());
+
 Console.Write("Рандомные элементы в массиве: ");
-int[] array = new int[10]; //Обозначаю массив
+int[] array = new int[N]; //Обозначаю массив
 int index = 0; // ввожу переменную для цикла
 while (index < array.Length) //Обозначаю цикл
 {
     array[index] = new Random().Next(1,10); 
-    Console.Write(array[index]); 
+    Console.Write($"{array[index]},"); 
     index++;
 } 
 
@@ -118,7 +121,7 @@ if (sum1>sum2)
     Console.WriteLine($"Сумма значений ДО {K} элемента в массиве больше суммы значений после");
 }
 else 
-    Console.WriteLine($"Сумма значений ПОСЛЕ {K} элемента в массиве больше суммы значений после");
+    Console.WriteLine($"Сумма значений ПОСЛЕ {K} элемента в массиве больше суммы значений До");
 
 
 
