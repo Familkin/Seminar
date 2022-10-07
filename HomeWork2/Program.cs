@@ -9,27 +9,27 @@
 //----------------------------------------Задача 13: 
 //Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 //Решение:
-// int number = new Random().Next(0, 999999);
-// Console.WriteLine($"Случайное число от 0 до 999999: " + number);
+int number = new Random().Next(0, 999999);
+Console.WriteLine($"Случайное число от 0 до 999999: " + number);
 
-// int NumberMemory = number;
-// int CountNumber = 0;
-// while (NumberMemory != 0)
-// {
-//     NumberMemory = NumberMemory / 10;
-//     CountNumber++;
-// }
-// if (CountNumber<3)
-// {
-//     Console.WriteLine("Третьей цифры нет");
+int NumberMemory = number;
+int CountNumber = 0;
+while (NumberMemory != 0)
+{
+    NumberMemory = NumberMemory / 10;
+    CountNumber++;
+}
+if (CountNumber<3)
+{
+    Console.WriteLine("Третьей цифры нет");
 
-// }
-// else
-// {
-//     double a = ((number/(Math.Pow(10,(CountNumber-3))))%10);
-//     int x = (int)a;
-//     Console.WriteLine($"Третья цифра:" + x);
-// }
+}
+else
+{
+    double a = ((number/(Math.Pow(10,(CountNumber-3))))%10);
+    int x = (int)a;
+    Console.WriteLine($"Третья цифра:" + x);
+}
 
 //---------------------------------------- Задача 15: 
 //Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
@@ -37,24 +37,24 @@
 // 7 -> да
 // 1 -> нет
 //Решение:
-Console.WriteLine("Введите день недели (от 1 до 7): ");
-int WeekDay = int.Parse(Console.ReadLine());
-if (WeekDay > 0 & WeekDay < 8)
-{
-    if (WeekDay > 5 & WeekDay < 8)
-    {
-        Console.WriteLine("Да, Это выходной");
-    }
-    else
-    {
-        Console.WriteLine("Нет, это не выходной");
-    }
+// Console.WriteLine("Введите день недели (от 1 до 7): ");
+// int WeekDay = int.Parse(Console.ReadLine());
+// if (WeekDay > 0 & WeekDay < 8)
+// {
+//     if (WeekDay > 5 & WeekDay < 8)
+//     {
+//         Console.WriteLine("Да, Это выходной");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Нет, это не выходной");
+//     }
         
-}
-else
-{
-    Console.WriteLine("Это не день недели, попробуй заново");
-}
+// }
+// else
+// {
+//     Console.WriteLine("Это не день недели, попробуй заново");
+// }
 
 
 ///---------------------------------------- Дополнительно
