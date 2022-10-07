@@ -82,9 +82,9 @@ Console.Write("Введите размер массива: ");
 int N = int.Parse(Console.ReadLine());
 
 Console.Write("Рандомные элементы в массиве: ");
-int[] array = new int[N]; //Обозначаю массив
-int index = 0; // ввожу переменную для цикла
-while (index < array.Length) //Обозначаю цикл
+int[] array = new int[N]; 
+int index = 0; 
+while (index < array.Length) 
 {
     array[index] = new Random().Next(1,10); 
     Console.Write($"{array[index]},"); 
