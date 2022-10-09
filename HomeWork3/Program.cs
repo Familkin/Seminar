@@ -107,8 +107,6 @@ int[] coordinates2 = FillArray();
 
 double distance = Math.Sqrt(Math.Pow(coordinates2[0]-coordinates[0], 2) + Math.Pow(coordinates2[1]-coordinates[1], 2) + Math.Pow(coordinates2[2]-coordinates[2], 2));
 
-//Math.Pow((coordinates2[0] - coordinates[0]), 2);
-
 Console.WriteLine("Расстояние между точками= " + distance);
 
 
