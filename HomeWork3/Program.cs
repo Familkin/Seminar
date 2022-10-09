@@ -8,7 +8,7 @@
 
 
 Console.Clear();
-// int number = 1234321;
+// int number = 12321;
 int number = new Random().Next(10000, 99999);
 Console.WriteLine($"Случайное пятизначное число: " + number);
 
@@ -37,6 +37,8 @@ void PrintArray(int[] col)
 LenghtNumber(number);
 
 //заполнение массива
+int[] FillArray()
+{
 int lenght = LenghtNumber(number);
 int[] Array = new int[lenght];
 int NumberCount = number;
@@ -45,15 +47,19 @@ for (int i = lenght - 1; i > -1; i--)
     Array[i] = NumberCount % 10;
     NumberCount = NumberCount / 10;
 }
+return Array;
+}
+
+int[] myarray = FillArray();
 
 void Palindrom(int number)
 {
     int start = 0;
-    int end = Array.Length - 1;
+    int end = myarray.Length - 1;
 
-    while (start < (Array.Length - 1) / 2)
+    while (start < (myarray.Length - 1) / 2)
     {
-        if (Array[start] != Array[end])
+        if (myarray[start] != myarray[end])
         {
             Console.WriteLine($"Число {number} НЕ является палиндром");
             break;
@@ -69,7 +75,7 @@ void Palindrom(int number)
 
 }
 
-PrintArray(Array);
+PrintArray(myarray);
 Palindrom(number);
 
 
