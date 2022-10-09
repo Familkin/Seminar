@@ -3,10 +3,12 @@
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
+//Решение:
 
 Console.Clear();
+// int number = 1234321;
 int number = new Random().Next(10000, 99999);
-Console.WriteLine($"Случайное число: " + number);
+Console.WriteLine($"Случайное пятизначное число: " + number);
 
 int LenghtNumber(int number)
 {
@@ -19,41 +21,60 @@ int LenghtNumber(int number)
     }
     return Length;
 }
+void PrintArray(int[] col)
+{
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.WriteLine(" " + col[position]);
+        position++;
+    }
+}
 
 LenghtNumber(number);
-int lenght = LenghtNumber(number);
-Console.WriteLine($"Длинна массива: " + lenght);
 
+//заполнение массива
+int lenght = LenghtNumber(number);
 int[] Array = new int[lenght];
+int NumberCount = number;
 for (int i = lenght - 1; i > -1; i--)
 {
-    Array[i] = number % 10;
-    number = number / 10;
+    Array[i] = NumberCount % 10;
+    NumberCount = NumberCount / 10;
 }
 
-int Palindrom(int number1)
+void Palindrom(int number)
 {
-  int x=1;
+    int start = 0;
+    int end = Array.Length - 1;
+
+    while (start < (Array.Length - 1) / 2)
+    {
+        if (Array[start] != Array[end])
+        {
+            Console.WriteLine($"Число {number} НЕ является палиндром");
+            break;
+        }
+        else
+        {
+            if (start * 2 == (end))
+                Console.WriteLine($"Число {number} является палиндром");
+        }
+        start++;
+        end--;
+    }
+
 }
+
+PrintArray(Array);
 Palindrom(number);
 
 
-// void PrintArray(int[] col)
-// {
-//     int count = col.Length;
-//     int position = 0;
-//     while (position < count)
-//     {
-//         Console.Write(" " + col[position]);
-//         position++;
-//     }
-// }
 
-// PrintArray(Array);
 
-// Console.WriteLine();
-// Console.WriteLine(12345%10);
-// Console.WriteLine(12345%10);
+
+
 
 
 // Задача 21
