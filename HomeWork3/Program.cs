@@ -32,10 +32,6 @@ void PrintArray(int[] col)
     }
 }
 
-
-//123
-
-
 LenghtNumber(number);
 
 //заполнение массива
