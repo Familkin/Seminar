@@ -7,6 +7,11 @@
 
 
 
+Console.Clear();
+// int number = 1234321;
+int number = new Random().Next(10000, 99999);
+Console.WriteLine($"Случайное пятизначное число: " + number);
+
 int LenghtNumber(int number)
 {
     int NumberMemory = number;
@@ -18,7 +23,6 @@ int LenghtNumber(int number)
     }
     return Length;
 }
-
 void PrintArray(int[] col)
 {
     int count = col.Length;
@@ -30,15 +34,16 @@ void PrintArray(int[] col)
     }
 }
 
-void FillArray(int[] coll)
+LenghtNumber(number);
+
+//заполнение массива
+int lenght = LenghtNumber(number);
+int[] Array = new int[lenght];
+int NumberCount = number;
+for (int i = lenght - 1; i > -1; i--)
 {
-    int lenght = LenghtNumber(number);
-    int NumberCount = number;
-    for (int i = lenght - 1; i > -1; i--)
-    {
-        Array[i] = NumberCount % 10;
-        NumberCount = NumberCount / 10;
-    }
+    Array[i] = NumberCount % 10;
+    NumberCount = NumberCount / 10;
 }
 
 void Palindrom(int number)
@@ -64,19 +69,12 @@ void Palindrom(int number)
 
 }
 
-
-Console.Clear();
-// int number = 1234321;
-int number = new Random().Next(10000, 99999);
-Console.WriteLine($"Случайное пятизначное число: " + number);
-
-LenghtNumber(number);
-int[] Array = new int[Length];
+PrintArray(Array);
+Palindrom(number);
 
 
-// FillArray(Array);
-// PrintArray(Array);
-// Palindrom(Array);
+
+
 
 
 
