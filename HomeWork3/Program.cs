@@ -5,6 +5,8 @@
 // 23432 -> да
 //Решение:
 
+
+
 Console.Clear();
 // int number = 1234321;
 int number = new Random().Next(10000, 99999);
