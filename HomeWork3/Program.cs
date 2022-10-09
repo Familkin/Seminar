@@ -5,10 +5,7 @@
 // 23432 -> да
 //Решение:
 
-Console.Clear();
-// int number = 1234321;
-int number = new Random().Next(10000, 99999);
-Console.WriteLine($"Случайное пятизначное число: " + number);
+
 
 int LenghtNumber(int number)
 {
@@ -21,6 +18,7 @@ int LenghtNumber(int number)
     }
     return Length;
 }
+
 void PrintArray(int[] col)
 {
     int count = col.Length;
@@ -32,16 +30,15 @@ void PrintArray(int[] col)
     }
 }
 
-LenghtNumber(number);
-
-//заполнение массива
-int lenght = LenghtNumber(number);
-int[] Array = new int[lenght];
-int NumberCount = number;
-for (int i = lenght - 1; i > -1; i--)
+void FillArray(int[] coll)
 {
-    Array[i] = NumberCount % 10;
-    NumberCount = NumberCount / 10;
+    int lenght = LenghtNumber(number);
+    int NumberCount = number;
+    for (int i = lenght - 1; i > -1; i--)
+    {
+        Array[i] = NumberCount % 10;
+        NumberCount = NumberCount / 10;
+    }
 }
 
 void Palindrom(int number)
@@ -67,12 +64,19 @@ void Palindrom(int number)
 
 }
 
-PrintArray(Array);
-Palindrom(number);
+
+Console.Clear();
+// int number = 1234321;
+int number = new Random().Next(10000, 99999);
+Console.WriteLine($"Случайное пятизначное число: " + number);
+
+LenghtNumber(number);
+int[] Array = new int[Length];
 
 
-
-
+// FillArray(Array);
+// PrintArray(Array);
+// Palindrom(Array);
 
 
 
