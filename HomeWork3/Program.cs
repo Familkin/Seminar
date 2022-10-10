@@ -5,77 +5,74 @@
 // 23432 -> да
 //Решение:
 
-// Console.Clear();
+Console.Clear();
 
-// int number = 12321;
-// // int number = new Random().Next(10000, 99999);
+int number = 2115112;
+// int number = new Random().Next(10000, 99999);
 
-// Console.WriteLine($"Случайное пятизначное число: " + number);
+Console.WriteLine($"Случайное пятизначное число: " + number);
 
-// int LenghtNumber(int number)
-// {
-//     int NumberMemory = number;
-//     int Length = 0;
-//     while (NumberMemory != 0)
-//     {
-//         NumberMemory = NumberMemory / 10;
-//         Length++;
-//     }
-//     return Length;
-// }
-// void PrintArray(int[] col)
-// {
-//     int count = col.Length;
-//     int position = 0;
-//     while (position < count)
-//     {
-//         Console.WriteLine(" " + col[position]);
-//         position++;
-//     }
-// }
+int LenghtNumber(int number)
+{
+    int NumberMemory = number;
+    int Length = 0;
+    while (NumberMemory != 0)
+    {
+        NumberMemory = NumberMemory / 10;
+        Length++;
+    }
+    return Length;
+}
+void PrintArray(int[] col)
+{
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.WriteLine(" " + col[position]);
+        position++;
+    }
+}
 
-// LenghtNumber(number);
+LenghtNumber(number);
 
-// int[] FillArray()
-// {
-//     int lenght = LenghtNumber(number);
-//     int[] Array = new int[lenght];
-//     int NumberCount = number;
-//     for (int i = lenght - 1; i > -1; i--)
-//     {
-//         Array[i] = NumberCount % 10;
-//         NumberCount = NumberCount / 10;
-//     }
-//     return Array;
-// }
+int[] FillArray()
+{
+    int lenght = LenghtNumber(number);
+    int[] Array = new int[lenght];
+    int NumberCount = number;
+    for (int i = lenght - 1; i > -1; i--)
+    {
+        Array[i] = NumberCount % 10;
+        NumberCount = NumberCount / 10;
+    }
+    return Array;
+}
 
-// int[] myarray = FillArray();
+int[] myarray = FillArray();
 
-// void Palindrom(int number)
-// {
-//     int start = 0;
-//     int end = myarray.Length - 1;
+void Palindrom(int number)
+{
+    int start = 0;
+    int end = myarray.Length - 1;
 
-//     while (start < (myarray.Length - 1) / 2)
-//     {
-//         if (myarray[start] != myarray[end])
-//         {
-//             Console.WriteLine($"Число {number} НЕ является палиндром");
-//             break;
-//         }
-//         else
-//         {
-//             if (start * 2 == (end))
-//                 Console.WriteLine($"Число {number} является палиндром");
-//         }
-//         start++;
-//         end--;
-//     }
+    while (start < (myarray.Length - 1) / 2)
+    {
+        if (myarray[start] != myarray[end])
+        {
+            Console.WriteLine($"Число {number} НЕ является палиндром");
+            break;
+        }
+        else
+        if (start== (myarray.Length % 2) - 1) Console.WriteLine($"Число {number} является палиндром");
+        start++;
+        end--;
+    }
 
-// }
+}
 
-// PrintArray(myarray);
-// Palindrom(number);
+PrintArray(myarray);
+Palindrom(number);
 
 
 
@@ -166,66 +163,66 @@
 // ----------------------------------------Дополнительно 2
 // Создание массива из двух массивов. В итоговом массиве должны быть элементы первого и второго массива.
 // [1,2,3] [4,5,6] -> [1,2,3,4,5,6]
+//Решение:
+
+// void FillArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(0, 10);
+//     }
+// }
+
+// void PrintArray(int[] array)
+// {
+// for (int i = 0; i < array.Length; i++)
+// {
+//     Console.Write(array[i]);
+// }
+// }
+
+// int[] arraymerging(int[] array1, int[] array2)
+// {
+//     int[] megaarray = new int[array1.Length + array2.Length];
 
 
-void FillArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = new Random().Next(0, 10);
-    }
-}
+//     for (int i = 0; i < array1.Length; i++)
+//     {
+//         megaarray[i] = array1[i];
+//     }
 
-void PrintArray(int[] array)
-{
-for (int i = 0; i < array.Length; i++)
-{
-    Console.Write(array[i]);
-}
-}
-
-int[] arraymerging(int[] array1, int[] array2)
-{
-    int[] megaarray = new int[array1.Length + array2.Length];
+//     for (int i = 0; i < array2.Length; i++)
+//     {
+//         megaarray[array1.Length+i] = array2[i];
+//     }
 
 
-    for (int i = 0; i < array1.Length; i++)
-    {
-        megaarray[i] = array1[i];
-    }
+//     return megaarray;
+// }
 
-    for (int i = 0; i < array2.Length; i++)
-    {
-        megaarray[array1.Length+i] = array2[i];
-    }
+// Console.Clear();
 
+// Console.Write("Введите размер первого массива: ");
+// int len1 = int.Parse(Console.ReadLine());
+// Console.Write("Введите размер второго массива: ");
+// int len2 = int.Parse(Console.ReadLine());
 
-    return megaarray;
-}
+// int[] array1 = new int[len1];
+// int[] array2 = new int[len2];
 
-Console.Clear();
+// FillArray(array1);
+// FillArray(array2);
 
-Console.Write("Введите размер первого массива: ");
-int len1 = int.Parse(Console.ReadLine());
-Console.Write("Введите размер второго массива: ");
-int len2 = int.Parse(Console.ReadLine());
+// Console.Write("Первый массив: ");
+// PrintArray(array1);
 
-int[] array1 = new int[len1];
-int[] array2 = new int[len2];
+// Console.WriteLine();
+// Console.Write("Второй массив: ");
+// PrintArray(array2);
 
-FillArray(array1);
-FillArray(array2);
-
-Console.Write("Первый массив: ");
-PrintArray(array1);
-
-Console.WriteLine();
-Console.Write("Второй массив: ");
-PrintArray(array2);
-
-arraymerging(array1, array2);
-int[] megaarray = arraymerging(array1, array2);
-Console.WriteLine();
-Console.Write("Объединенный массив: ");
-PrintArray(megaarray);
+// arraymerging(array1, array2);
+// int[] megaarray = arraymerging(array1, array2);
+// Console.WriteLine();
+// Console.Write("Объединенный массив: ");
+// PrintArray(megaarray);
 
