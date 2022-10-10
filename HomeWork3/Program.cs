@@ -126,43 +126,106 @@
 // ----------------------------------------Дополнительно 1 
 //Создать программу, которая из массива удаляет элемент с позиции, которую введет пользователь.
 
-Console.Clear();
-int[] Array = new int[5];
+// Console.Clear();
+// int[] Array = new int[10];
 
-for (int i = 0; i < Array.Length; i++)
-{
-    Array[i] = new Random().Next(0, 10);
-    Console.Write(Array[i] + " ");
-}
+// for (int i = 0; i < Array.Length; i++)
+// {
+//     Array[i] = new Random().Next(0, 10);
+//     Console.Write(Array[i] + " ");
+// }
 
-Console.WriteLine();
-Console.WriteLine("Какой элемент удалить?");
-int numberofelement = int.Parse(Console.ReadLine());
+// Console.WriteLine();
+// Console.WriteLine("Какой элемент удалить?");
+// int numberofelement = int.Parse(Console.ReadLine());
 
-for (int i1 = numberofelement; i1 < Array.Length - 1; i1++)
-{
-    Array[i1] = Array[i1 + 1];
-}
+// for (int i1 = numberofelement; i1 < Array.Length - 1; i1++)
+// {
+//     Array[i1] = Array[i1 + 1];
+// }
 
-int[] newarray = new int[Array.Length - 1];
-for (int o = 0; o < newarray.Length; o++)
-{
-    newarray[o] = Array[o];
-}
+// int[] newarray = new int[Array.Length - 1];
+// for (int o = 0; o < newarray.Length; o++)
+// {
+//     newarray[o] = Array[o];
+// }
 
-void PrintArray(int[] col)
-{
-    int count = col.Length;
-    int position = 0;
-    while (position < count)
-    {
-        Console.Write(col[position] + " ");
-        position++;
-    }
-}
-PrintArray(newarray);
+// void PrintArray(int[] col)
+// {
+//     int count = col.Length;
+//     int position = 0;
+//     while (position < count)
+//     {
+//         Console.Write(col[position] + " ");
+//         position++;
+//     }
+// }
+// PrintArray(newarray);
 
 
 // ----------------------------------------Дополнительно 2
 // Создание массива из двух массивов. В итоговом массиве должны быть элементы первого и второго массива.
 // [1,2,3] [4,5,6] -> [1,2,3,4,5,6]
+
+
+void FillArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(0, 10);
+    }
+}
+
+void PrintArray(int[] array)
+{
+for (int i = 0; i < array.Length; i++)
+{
+    Console.Write(array[i]);
+}
+}
+
+int[] arraymerging(int[] array1, int[] array2)
+{
+    int[] megaarray = new int[array1.Length + array2.Length];
+
+
+    for (int i = 0; i < array1.Length; i++)
+    {
+        megaarray[i] = array1[i];
+    }
+
+    for (int i = 0; i < array2.Length; i++)
+    {
+        megaarray[array1.Length+i] = array2[i];
+    }
+
+
+    return megaarray;
+}
+
+Console.Clear();
+
+Console.Write("Введите размер первого массива: ");
+int len1 = int.Parse(Console.ReadLine());
+Console.Write("Введите размер второго массива: ");
+int len2 = int.Parse(Console.ReadLine());
+
+int[] array1 = new int[len1];
+int[] array2 = new int[len2];
+
+FillArray(array1);
+FillArray(array2);
+
+Console.Write("Первый массив: ");
+PrintArray(array1);
+
+Console.WriteLine();
+Console.Write("Второй массив: ");
+PrintArray(array2);
+
+arraymerging(array1, array2);
+int[] megaarray = arraymerging(array1, array2);
+Console.WriteLine();
+Console.Write("Объединенный массив: ");
+PrintArray(megaarray);
+
