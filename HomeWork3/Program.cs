@@ -7,7 +7,7 @@
 
 Console.Clear();
 
-int number = 2115112;
+int number = 11211;
 // int number = new Random().Next(10000, 99999);
 
 Console.WriteLine($"Случайное пятизначное число: " + number);
