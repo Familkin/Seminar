@@ -112,18 +112,57 @@
 // 5 -> 1, 8, 27, 64, 125
 //Решение:
 
-Console.Clear();
-Console.Write("Сколько значений из таблицы кубов показать? ");
-int X = int.Parse(Console.ReadLine());
+// Console.Clear();
+// Console.Write("Сколько значений из таблицы кубов показать? ");
+// int X = int.Parse(Console.ReadLine());
 
-double[] cubetable = new double[100];
-for (int i = 1; i < X+1; i++)
+// double[] cubetable = new double[100];
+// for (int i = 1; i < X+1; i++)
+// {
+//     cubetable[i] = Math.Pow(i,3);
+//     Console.WriteLine(cubetable[i]);
+// }
+
+// ----------------------------------------Дополнительно 1 
+//Создать программу, которая из массива удаляет элемент с позиции, которую введет пользователь.
+
+Console.Clear();
+int[] Array = new int[5];
+
+for (int i = 0; i < Array.Length; i++)
 {
-    cubetable[i] = Math.Pow(i,3);
-    Console.WriteLine(cubetable[i]);
+    Array[i] = new Random().Next(0, 10);
+    Console.Write(Array[i] + " ");
 }
 
-// Дополнительно
-// 1) Создать программу, которая из массива удаляется элемент с позиции, которую введет пользователь.
-// 2) Создание массива из двух массивов. В итоговом массиве должны быть элементы первого и второго массива.
+Console.WriteLine();
+Console.WriteLine("Какой элемент удалить?");
+int numberofelement = int.Parse(Console.ReadLine());
+
+for (int i1 = numberofelement; i1 < Array.Length - 1; i1++)
+{
+    Array[i1] = Array[i1 + 1];
+}
+
+int[] newarray = new int[Array.Length - 1];
+for (int o = 0; o < newarray.Length; o++)
+{
+    newarray[o] = Array[o];
+}
+
+void PrintArray(int[] col)
+{
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.Write(col[position] + " ");
+        position++;
+    }
+}
+PrintArray(newarray);
+
+
+// ----------------------------------------Дополнительно 2
+// Создание массива из двух массивов. В итоговом массиве должны быть элементы первого и второго массива.
 // [1,2,3] [4,5,6] -> [1,2,3,4,5,6]
