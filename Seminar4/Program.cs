@@ -122,7 +122,7 @@ count(arr);
 //(т. е. не подходит вариант, когда в массиве постоянно выпадает сначала 6 положительных, а потом 6 отрицательных 
 //чисел или же когда элементы постоянно чередуются через один и пр.). Вывести полученный массив на экран.
 
-/*
+
 int[] FillArray()
 {
     int countPlus = 0;
@@ -132,15 +132,15 @@ int[] FillArray()
     while (i < arr.Length)
     {
         int N = new Random().Next(-10, 10);
+        if (N != 0)
+            if (countMinus == 6) N = new Random().Next(1, 10);
+        if (countPlus == 6) N = new Random().Next(-10, 1);
+        arr[i] = N; i++;
         if (N < 0) countMinus++;
         if (N > 0) countPlus++;
-        if (countMinus == 6) int N = new Random().Next(-10, 1);
-        if (countPlus == 6)  int N = new Random().Next(-10, 1);
-if (N!=0) 
-
-        arr[i] = N; i++;
-
     }
+    Console.WriteLine($"Отрицательных чисел " + countMinus);
+    Console.WriteLine($"Положительных чисел " + countPlus);
     return arr;
 }
 
@@ -160,11 +160,12 @@ void Printarray(int[] array)
 
 int[] arr = FillArray();
 Printarray(arr);
-*/
+
+
 //задача 5
 //Преобразовать массив так, чтобы сначала шли нулевые элементы, а затем все остальные.
 //-1 -3 -1 -3 -1 0 -4 -2 -> 0 -3 -1 -3 -1 -1 -4 -2
-
+/*
 int[] FillArray()
 {
     int[] arr = new int[20];
@@ -217,3 +218,4 @@ int[] array = FillArray();
 Printarray(array);
 SelectionSort(array);
 Printarray(array);
+*/
