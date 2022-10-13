@@ -76,21 +76,73 @@ summ(N);
 
 
 // рабочий вариант
-int summ(int number)
-{
-    int sum=0;
-    while (number>0)
-    {
-        sum= sum+number%10;
-        number/=10;
-    }
-    return sum;
-}
+// int summ(int number)
+// {
+//     int sum=0;
+//     while (number>0)
+//     {
+//         sum= sum+number%10;
+//         number/=10;
+//     }
+//     return sum;
+// }
+
+// Console.Clear();
+// Console.Write("Веедите число, элементы которого нужно ссумировать: ");
+// int num = int.Parse(Console.ReadLine());
+// Console.Write("Сумма цифр в числе = " + summ(num));
+
+//Задача 29: 
+//Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран. 
+//Элементы задаются рандомно. 
+//Итоговый массив должен содержать в себе суммы цифр числа. 
+//Т.е. необходимо подсчитывать суммы цифр чисел и записывать их в новый массив.
+
+//1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+//63, 12, 33, 36 -> [9, 3, 6, 9]
 
 Console.Clear();
-Console.Write("Веедите число, элементы которого нужно ссумировать: ");
-int num = int.Parse(Console.ReadLine());
-Console.Write("Сумма цифр в числе = " + summ(num));
+
+int[] FillArray(int len)
+{
+    int[] array = new int[len];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(1, 99);
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+int[] SummElementArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        int sum = 0;
+        while (array[i] > 0)
+        {
+            sum = sum + array[i] % 10;
+            array[i] /= 10;
+        }
+        Console.Write(sum + " ");
+    }
+    return array;
+}
 
 
-
+Console.Write("Введите длинну массива: ");
+int len = int.Parse(Console.ReadLine());
+int[] array = FillArray(len);
+Console.Write("Рандомный массив: ");
+PrintArray(array);
+Console.WriteLine();
+Console.Write("Сумма цифр каждого элемента в рандомном массиве: ");
+SummElementArray(array);
