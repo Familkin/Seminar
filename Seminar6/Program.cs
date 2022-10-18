@@ -4,38 +4,103 @@
 // ----------------- задача 2
 //Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
 
-double N1 = 0;
+// double N1 = 0;
 
-double N2 = 1;
+// double N2 = 1;
 
-double F = N1 + N2;
+// double F = N1 + N2;
 
-Console.Write("Введите порядковый номер числа Фибоначчи: ");
-double X = int.Parse(Console.ReadLine());
+// Console.Write("Введите порядковый номер числа Фибоначчи: ");
+// double X = int.Parse(Console.ReadLine());
 
 
-void Fibonachi(double X)
+// void Fibonacсi(double X)
+// {
+//     if (X == 0)
+//     {
+//         F = 0;
+//         Console.Write(0);
+//     }
+//     else if (X == 1)
+//     {
+//         F = 1;
+//         Console.Write(1);
+//     }
+//     else
+//     {
+//         Console.Write(0 + "," + 1 + "," + 1 + ",");
+//         for (int i = 2; i < X; i++)
+//         {
+//             N1 = N2;
+//             N2 = F;
+//             F = N1 + N2;
+//             Console.Write(F + ",");
+//         }
+//     }
+//     Console.Write(".");
+
+// }
+// Fibonacсi(X);
+
+
+//----------------- Задача 3
+
+//Дано нечетное число n. Создайте двумерный массив из n×n элементов, заполнив его символами "." 
+//(каждый элемент массива является строкой из одного символа). Затем заполните символами "*" 
+//среднюю строку массива, средний столбец массива, главную диагональ и побочную диагональ. 
+//В результате единицы в массиве должны образовывать изображение звездочки. 
+//Выведите полученный массив на экран, разделяя элементы массива пробелами.
+
+
+/*
+int[,] array = new int[21,21];
+
+int n = array.GetLength(0);
+
+void PrintArray()
 {
-    if (X == 0)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        F = 0;
-    }
-    else
-    {
-        if (X == 1)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            F = 1;
+            if (i == j || i == n - 1 - j || i == n / 2 || j == n / 2)
+            {
+                Console.Write("*");
+            }
+            else
+            {
+                Console.Write(".");
+            }
         }
+        Console.WriteLine();
     }
-    Console.Write(0 + "," + 1 + ",");
-    for (int i = 2; i < X; i++)
-    {
-        N1 = N2;
-        N2 = F;
-        F = N1 + N2;
-        Console.Write(F + ",");
-    }
-    Console.Write(".");
-
 }
-Fibonachi(X);
+PrintArray();
+*/
+
+//Дано число n. Создайте массив размером n×n и заполните его по следующему правилу. 
+//На главной диагонали должны быть записаны числа 0. На двух диагоналях, прилегающих к главной, числа 1. На следующих двух диагоналях числа 2, и т.д.
+
+
+Console.Write("Введите размер массива");
+int l = int.Parse(Console.ReadLine());
+
+int[,] array = new int[l,l];
+
+int n = array.GetLength(0);
+
+void PrintArray()
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == j) Console.Write("0");
+            
+            else if (i+1==j+1)
+            
+        }
+        Console.WriteLine();
+    }
+}
+PrintArray();
