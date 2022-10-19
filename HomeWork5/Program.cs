@@ -127,6 +127,15 @@ int[] FillArray(int len)
     return array;
 }
 
+void PrintList(List<int> numbers)
+{
+    foreach (var n in numbers)
+    {
+        Console.Write(n + " ");
+    }
+
+}
+
 
 Console.Write("\nВведите длинну массива: ");
 int len = int.Parse(Console.ReadLine());
@@ -135,10 +144,7 @@ int[] array = new int[len];
 array = FillArray(len);
 numbers.AddRange(array);
 
-foreach (var n in numbers)
-{
-    Console.Write(n + " ");
-}
+PrintList(numbers);
 
 Console.Write("\nКакое число меняем?:  ");
 int N = int.Parse(Console.ReadLine());
@@ -152,15 +158,15 @@ List<int> Search(List<int> List, int N, int M)
         if (List[i] == N)
         {
             List[i] = M;
+            break;
         }
-        break;
+
     }
     return List;
 }
 
-numbers.AddRange(Search(numbers, N, M));
+numbers = Search(numbers, N, M);
 
-foreach (var n in numbers)
-{
-    Console.Write(n + " ");
-}
+
+
+PrintList(numbers);
