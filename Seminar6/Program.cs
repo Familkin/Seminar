@@ -97,7 +97,7 @@ void PrintArray()
         {
             if (i == j) Console.Write("0");
             
-            else if (i+1==j+1)
+            else if (i+1==j+1);
             
         }
         Console.WriteLine();
