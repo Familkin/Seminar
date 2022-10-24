@@ -101,4 +101,72 @@ Search(array, N);
 
 
 
+/*
+--------------------------------------Задача 52. 
+Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+*/
 
+Console.Clear();
+
+void FillArray(double[,] array, double x, double y)
+{
+    for (int i = 0; i < y; i++)
+    {
+        for (int j = 0; j < x; j++)
+        {
+            array[i, j] = new Random().Next(1, 9);
+            Console.Write(array[i, j] + "   ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void AvgArray(double[,] array, double y)
+{
+    int n = 0;
+
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        double summ = 0;
+        double avg = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == n)
+            {
+                summ += array[j, i];
+                Console.Write(array[j, i] + "   ");
+            }
+
+        }
+        n++;
+        avg = Math.Round(summ / array.GetLength(1), 2);
+        Console.Write(" Среднее арифметическое = "+avg + "   ");
+        Console.WriteLine();
+    }
+
+
+
+
+
+}
+
+
+Console.Write("Введите количество строк: ");
+int x = int.Parse(Console.ReadLine());
+
+Console.Write("Введите количество столбцов: ");
+int y = int.Parse(Console.ReadLine());
+
+double[,] array = new double[x, y];
+FillArray(array, x, y);
+
+Console.Write("\nСредние значения по столбцам: ");
+Console.WriteLine();
+
+AvgArray(array, y);
