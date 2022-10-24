@@ -226,7 +226,7 @@ void change(List<List<double>> Mylist, int I, int J)
 
 
 List<List<double>> numbers = new List<List<double>>();
-
+return
 Console.WriteLine("Введите количество строк в массиве: ");
 int M = int.Parse((Console.ReadLine()));
 Console.WriteLine("Введите количество столбцов в массиве: ");
