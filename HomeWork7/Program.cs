@@ -53,13 +53,13 @@ FillArray(array, y, x);
 /*
 Console.Clear();
 
-void FillArray(int[,] array, int x, int y)
+void FillArray(int[,] array)
 {
-    for (int i = 0; i < y; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < x; j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(-99, 99);
+            array[i, j] = new Random().Next(1, 9);
             Console.Write(array[i, j] + " ");
         }
         Console.WriteLine();
@@ -87,17 +87,57 @@ void Search(int[,] array, int N)
     else Console.WriteLine("Такого элемента нет в массиве");
 }
 
-Console.Write("Введите количество строк: ");
+
+void SearchPosition(int[,] array, int xSerch, int ySerch)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == xSerch && j == ySerch)
+            {
+                Console.WriteLine(array[i, j]);
+            }
+        }
+    }
+}
+
+Console.WriteLine("Определим ширину и высоту массива. Для этого введите: ");
+Console.Write("Количество строк: ");
 int x = int.Parse(Console.ReadLine());
-Console.Write("Введите количество столбцов: ");
+Console.Write("Количество столбцов: ");
 int y = int.Parse(Console.ReadLine());
 int[,] array = new int[x, y];
-FillArray(array, x, y);
+FillArray(array);
 
 Console.Write("Введите число, которое ищем в массиве: ");
 int N = int.Parse(Console.ReadLine());
 Search(array, N);
+
+Console.WriteLine();
+Console.WriteLine("А теперь выведем число по координатам, для этого задайте ");
+Console.Write($"Номер строки (от 0 до {x - 1}): ");
+int xSerch = int.Parse(Console.ReadLine());
+Console.Write($"И номер столбца (от 0 до {y - 1}): ");
+int ySerch = int.Parse(Console.ReadLine());
+
+
+while (xSerch < 0 || xSerch > x - 1 || ySerch < 0 || ySerch > y - 1)
+{
+    Console.WriteLine("Вы ввели не верные координаты, попробуйте еще раз.");
+    Console.Write($"Какая строка? от 0 до {x - 1}: ");
+    xSerch = int.Parse(Console.ReadLine());
+    Console.Write($"Какой столбец? от 0 до {y - 1}: ");
+    ySerch = int.Parse(Console.ReadLine());
+}
+
+SearchPosition(array, xSerch, ySerch);
 */
+
+
+
+
+
 
 
 
@@ -111,6 +151,7 @@ Search(array, N);
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
 
+/*
 Console.Clear();
 
 void FillArray(double[,] array, double x, double y)
@@ -129,8 +170,6 @@ void FillArray(double[,] array, double x, double y)
 void AvgArray(double[,] array, double y)
 {
     int n = 0;
-
-
     for (int i = 0; i < array.GetLength(0); i++)
     {
         double summ = 0;
@@ -149,17 +188,11 @@ void AvgArray(double[,] array, double y)
         Console.Write(" Среднее арифметическое = "+avg + "   ");
         Console.WriteLine();
     }
-
-
-
-
-
 }
 
 
 Console.Write("Введите количество строк: ");
 int x = int.Parse(Console.ReadLine());
-
 Console.Write("Введите количество столбцов: ");
 int y = int.Parse(Console.ReadLine());
 
@@ -168,5 +201,7 @@ FillArray(array, x, y);
 
 Console.Write("\nСредние значения по столбцам: ");
 Console.WriteLine();
-
 AvgArray(array, y);
+*/
+
+
