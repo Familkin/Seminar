@@ -150,8 +150,8 @@ SearchPosition(array, xSerch, ySerch);
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
-
 /*
+
 Console.Clear();
 
 void FillArray(double[,] array, double x, double y)
@@ -205,3 +205,66 @@ AvgArray(array, y);
 */
 
 
+// Дополнительная задача 3
+//Отсортировать в матрице столбцы по убыванию значений
+//элементов в первой строке. Использовать заполнение
+//случайными значениями.
+// 3 -2 6 4    -2 3 4 6
+// 8 1 12 2 ->  1 8 2 12
+// 5 4 -8 0     4 5 0 -8
+/*
+Console.Clear();
+
+void FillArray(int[,] Array)
+{
+    for (int i = 0; i < Array.GetLength(0); i++)
+    {
+        for (int j = 0; j < Array.GetLength(1); j++)
+        {
+            Array[i, j] = new Random().Next(-9, 9);
+        }
+    }
+}
+
+void PrintArray(int[,] Array)
+{
+    for (int i = 0; i < Array.GetLength(0); i++)
+    {
+        for (int j = 0; j < Array.GetLength(1); j++)
+        {
+            Console.Write(Array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void SortArray(int[,] Array)
+{
+    int ii = 0;
+
+    int max = Array[ii, 0];
+
+    for (int i = 0; i < Array.GetLength(0) - 1; i++)
+    {
+        for (int j = 0; j < Array.GetLength(1) - 1; j++)
+        {
+            if (Array[i, j] > max)
+            {
+                max = Array[ii, j];
+                ii = i;
+            }
+        }
+    }
+
+
+
+}
+
+int[,] Array = new int[5, 5];
+
+FillArray(Array);
+PrintArray(Array);
+SortArray(Array);
+Console.WriteLine();
+PrintArray(Array);
+*/
