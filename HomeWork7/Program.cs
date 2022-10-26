@@ -212,7 +212,8 @@ AvgArray(array, y);
 // 3 -2 6 4    -2 3 4 6
 // 8 1 12 2 ->  1 8 2 12
 // 5 4 -8 0     4 5 0 -8
-/*
+
+
 Console.Clear();
 
 void FillArray(int[,] Array)
@@ -256,9 +257,21 @@ void SortArray(int[,] Array)
         }
     }
 
-
-
+    int tmp;
+    for (int k = 0; k < Array.GetLength(1); k++)
+        for (int p = k + 1; p < Array.GetLength(1); p++)
+            if (Array[ii, k] < Array[ii, p])
+            {
+                for (int i = 0; i < Array.GetLength(0); i++)
+                {
+                    tmp = Array[i, p];
+                    Array[i, p] = Array[i, k];
+                    Array[i, k] = tmp;
+                }
+            }
 }
+
+
 
 int[,] Array = new int[5, 5];
 
@@ -267,4 +280,3 @@ PrintArray(Array);
 SortArray(Array);
 Console.WriteLine();
 PrintArray(Array);
-*/
