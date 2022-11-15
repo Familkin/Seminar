@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using System;
 using System.Linq;
 using System.Text;
@@ -130,9 +130,9 @@ namespace ConsoleMatrixEffect
     }
 }
 
-*/
 
 
+/*
 using System.Linq;
 
 string Text = "(1,2)(3,4)(5,6)(7,8)";
@@ -145,3 +145,4 @@ for (int i = 0; i < data.Length; i++)
 {
     Console.WriteLine(data[i]);
 }
+*/
